@@ -8,7 +8,7 @@ Feature: Login Tests
   #Background:
    # Given The user is on the login page
 
-  @selim @login @smoke @wip
+  @selim @login @smoke
   Scenario: Positive Login Test as Selim
   Given The user is on the login page
     When The user enters valid credentials for Selim
