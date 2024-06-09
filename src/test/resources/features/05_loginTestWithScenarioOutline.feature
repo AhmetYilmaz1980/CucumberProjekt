@@ -13,7 +13,7 @@ Feature: Login Test DDF
       | rosa@test.com     | Test123456 | Rosa      | 4               |
       | mike@gmail.com    | mike1234   | mike      | 4               |
 
-  @wip
+
   Scenario Outline: Login With Map
     Given The user is on the login page
     When The user sould be able to login and verifies success login with following map
@@ -22,8 +22,8 @@ Feature: Login Test DDF
       | username | <username> |
     Examples:
       | email             | password   | username |
-      | hmtylmz@gmail.com | Ay00001051 | Ahmet60  |
-      | rosa@test.com     | Test123456 | Rosa 60  |
+      | hmtylmz@gmail.com | Ay00001051 | Ahmet    |
+      | rosa@test.com     | Test123456 | Rosa     |
       | mike@gmail.com    | mike1234   | mike     |
 
 

@@ -2,6 +2,7 @@ package com.euroTech.step_definitions;
 
 import com.euroTech.pages.DashboardPage;
 import com.euroTech.pages.LoginPage;
+import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.ConfigurationReader;
 import com.euroTech.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -50,8 +51,12 @@ public class LoginstepDefs {
         String actualText = dashboardPage.userName.getText();
         String expectedText = mapUserInfo.get("username");
         Assert.assertEquals(expectedText,actualText);
+ }
+    @When("The user logins with {string} and {string} using excel: {string}, {string}, {int}")
+    public void the_user_logins_with_and_using_excel(String email, String password, String path, String sheet_name, int row_number) {
+        List<Map<String, String>> excelData = BrowserUtils.getExcelData(path, sheet_name);
 
+        loginPage.login(excelData.get(row_number).get(email),excelData.get(row_number).get(password));
 
     }
-
 }
